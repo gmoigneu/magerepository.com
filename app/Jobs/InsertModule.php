@@ -67,7 +67,7 @@ class InsertModule extends Job implements ShouldQueue
             $module->repository_created_at = $repo['pushed_at'];
             $module->stars = $repo['stargazers_count'];
             $module->forks = $repo['forks'];
-            $module->watchers = $repo['watchers'];
+            $module->watchers = $repo['subscribers_count'];
             $module->github_url = $repo['html_url'];
 
             $module->clone_url = $repo['clone_url'];
