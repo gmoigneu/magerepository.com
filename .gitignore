@@ -4,3 +4,8 @@
 Homestead.yaml
 Homestead.json
 .env
+.idea
+node_modules
+public/bundle.js
+public/styles.css
+public/material.css
