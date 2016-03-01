@@ -5,7 +5,7 @@
 name: magerepository
 
 # The type of the application to build.
-type: php:5.6
+type: php:7.0
 build:
   flavor: symfony
 
