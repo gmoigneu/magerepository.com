@@ -35,7 +35,6 @@ mounts:
 hooks:
     deploy: |
         php artisan migrate --force
-        php artisan db:seed
 
 # The configuration of scheduled execution.
 # see http://symfony.com/doc/current/components/console/introduction.html
