@@ -18,7 +18,7 @@
     toastrConfig.progressBar = true;
 
     RestangularProvider.setBaseUrl('http://magerepository.app/api/');
-    RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
+    RestangularProvider.addResponseInterceptor(function(data, operation) {
       var extractedData;
       // .. to look for getList operations
       if (operation === "getList") {
@@ -28,7 +28,6 @@
       } else {
         extractedData = data.data;
       }
-      console.log(extractedData);
       return extractedData;
     });
   }

@@ -17,6 +17,12 @@ relationships:
     database: "mysql:mysql"
     redis: "redis:redis"
 
+dependencies:
+  nodejs:
+    gulp-cli: "~1.2.1"
+    bower: "~1.7.7"
+
+
 # The configuration of app when it is exposed to the web.
 web:
     # The public directory of the app, relative to its root.
@@ -35,7 +41,10 @@ mounts:
 hooks:
     deploy: |
         php artisan migrate --force
-
+    build: |
+        cd webapp
+        npm install
+        gulp
 # The configuration of scheduled execution.
 # see http://symfony.com/doc/current/components/console/introduction.html
 #crons:
