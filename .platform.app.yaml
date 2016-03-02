@@ -44,6 +44,7 @@ hooks:
     build: |
         cd webapp
         npm install
+        bower install
         gulp
 # The configuration of scheduled execution.
 # see http://symfony.com/doc/current/components/console/introduction.html
