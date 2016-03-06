@@ -6,8 +6,8 @@
             <div  class="mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__title">
                     <h4 class="mdl-card__title-text">
-                        <span ui-sref="module({moduleId: 1})">{{module.name}}</span>
-                        <p class="mdl-card__subtitle-text">by <a ui-sref="">{{module.author.data.username}}</a></p>
+                        <span ui-sref="module({moduleId: module.id})">{{module.name}}</span>
+                        <p class="mdl-card__subtitle-text">by <a ui-sref="author({authorId: module.author.data.id})">{{module.author.data.username}}</a></p>
                     </h4>
 
                 </div>
