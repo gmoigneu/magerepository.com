@@ -1,4 +1,4 @@
-<div class="mdl-grid">
+<div class="list-header">
     Listing all {{ list.total }} modules
 
     <select name="singleSelect" ng-model="list.order" ng-change="list.DoOrderUpdate()">
@@ -9,32 +9,25 @@
 </div>
 
 
-<div class="mdl-grid modules-grid">
-    <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="module in list.modules">
-        <div >
-            <div  class="mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title">
-                    <h4 class="mdl-card__title-text">
-                        <span ui-sref="module({moduleId: module.id})">{{module.name}}</span>
-                        <p class="mdl-card__subtitle-text">by <a ui-sref="author({authorId: module.author.data.id})">{{module.author.data.username}}</a></p>
-                    </h4>
-
-                </div>
-                <div class="mdl-card__supporting-text">
-                    {{module.description}}
-                </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <span class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        <i class="fa fa-star"></i> {{module.stars}}
-                    </span>
-                    <span class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        <i class="fa fa-eye"></i> {{module.watchers}}
-                    </span>
-                    <span class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        <i class="fa fa-code-fork"></i> {{module.forks}}
-                    </span>
-                </div>
-            </div>
+<div class="modules-grid">
+    <div class="module" ng-repeat="module in list.modules">
+        <div class="block-header">
+            <h2><span ui-sref="module({moduleId: module.id})">{{module.name}}</span></h2>
+            <p>by <a ui-sref="author({authorId: module.author.data.id})">{{module.author.data.username}}</a></p>
+        </div>
+        <div class="block-content">
+            <p>Lorem ipsum dolor sie amet. Lorem ipsum dolor sie amet. Lorem ipsum dolor sie amet.  {{module.description}}</p>
+        </div>
+        <div class="block-footer">
+            <span>
+                <i class="fa fa-star"></i> {{module.stars}}
+            </span>
+            <span>
+                <i class="fa fa-eye"></i> {{module.watchers}}
+            </span>
+            <span>
+                <i class="fa fa-code-fork"></i> {{module.forks}}
+            </span>
         </div>
     </div>
 </div>

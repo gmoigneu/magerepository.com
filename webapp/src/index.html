@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,600italic,600,700,700italic,900,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
 
 
     <!-- build:css({.tmp/serve,src}) styles/app.css -->
@@ -21,16 +23,27 @@
     <![endif]-->
 
     <header>
-      <p>MageRepository</p>
+      <div>
+        <img src="/assets/magerepository.svg" alt="">
+        <p class="title">
+          <span>MageRepository</span>
+        </p>
+        <p class="baseline">Curated repository of open-source Magento2 modules</p>
+      </div>
     </header>
 
-    <main ui-view>
+    <main>
+      <section ui-view>
 
+      </section>
     </main>
 
     <footer>
-      Proudly built by Guillaume Moigneu
+      <div>
+        <p>Proudly built by Guillaume Moigneu</p>
+      </div>
     </footer>
+
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

@@ -8,7 +8,10 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
 $fa-font-path: "../../bower_components/font-awesome/fonts";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
-
+@import "styles/normalize";
 @import "styles/bourbon/bourbon";
 @import "styles/neat/neat";
-@import "styles/base/base";
+@import "styles/app";
+
+@import "styles/list";
+@import "styles/detail";
