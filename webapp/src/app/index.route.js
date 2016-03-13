@@ -9,23 +9,17 @@
   function routerConfig($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-      .state('popular', {
-        url: '/',
-        templateUrl: 'app/grid/grid.html',
-        controller: 'GridController',
-        controllerAs: 'grid'
+      .state('list-mp', {
+        url: '/:order/page/:page',
+        templateUrl: 'app/list/list.html',
+        controller: 'ListController',
+        controllerAs: 'list'
       })
-      .state('new', {
-        url: '/new',
-        templateUrl: 'app/grid/grid.html',
-        controller: 'GridController',
-        controllerAs: 'grid'
-      })
-      .state('updated', {
-        url: '/updated',
-        templateUrl: 'app/grid/grid.html',
-        controller: 'GridController',
-        controllerAs: 'grid'
+      .state('list-m', {
+        url: '/:order',
+        templateUrl: 'app/list/list.html',
+        controller: 'ListController',
+        controllerAs: 'list'
       })
       .state('module', {
         url: '/module/:moduleId',
@@ -41,5 +35,5 @@
       });
     $urlRouterProvider.otherwise('/');
   }
-
+  
 })();

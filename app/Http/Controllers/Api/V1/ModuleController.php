@@ -34,7 +34,7 @@ class ModuleController extends BaseController
             }
         };
 
-        $count = ($request->has('count')) ? $request->get('count') : 20;
+        $count = ($request->has('count')) ? $request->get('count') : 2;
 
         $modules = $modules->paginate($count);
         return $this->response->paginator($modules, new ModuleTransformer);

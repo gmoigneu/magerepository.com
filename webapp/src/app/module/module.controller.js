@@ -13,7 +13,6 @@
         Restangular.one('modules', $stateParams.moduleId).get().then(function(module) {
             vm.module = module;
             vm.author = module.author.data;
-            $log.info(vm.module);
         });
 
     }

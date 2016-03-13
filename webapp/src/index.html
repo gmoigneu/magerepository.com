@@ -7,11 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
-    <!-- endbower -->
-    <!-- endbuild -->
+
 
     <!-- build:css({.tmp/serve,src}) styles/app.css -->
     <!-- inject:css -->
@@ -24,28 +20,17 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <!-- Title -->
-          <span class="mdl-layout-title">MageRepository</span>
-        </div>
-        <!-- Tabs -->
-        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-          <a ui-sref="popular" class="mdl-layout__tab is-active">Most popular</a>
-          <a ui-sref="updated" class="mdl-layout__tab">Just updated</a>
-          <a ui-sref="new" class="mdl-layout__tab">New additions</a>
-        </div>
-      </header>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">MageRepository</span>
-      </div>
-      <main class="mdl-layout__content">
-        <div class="page-content" ui-view>
-          Placeholder
-        </div>
-      </main>
-    </div>
+    <header>
+      <p>MageRepository</p>
+    </header>
+
+    <main ui-view>
+
+    </main>
+
+    <footer>
+      Proudly built by Guillaume Moigneu
+    </footer>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

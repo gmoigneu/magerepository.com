@@ -1,7 +1,16 @@
-<h1 class="mdl-typography--headline">{{ grid.gridTitle }}</h1>
+<div class="mdl-grid">
+    Listing all {{ list.total }} modules
+
+    <select name="singleSelect" ng-model="list.order" ng-change="list.DoOrderUpdate()">
+        <option value="popular">Popular</option>
+        <option value="new">New additions</option>
+        <option value="updated">Recently updated</option>
+    </select>
+</div>
+
 
 <div class="mdl-grid modules-grid">
-    <div class="mdl-cell--3-col" ng-repeat="module in grid.modules">
+    <div class="mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="module in list.modules">
         <div >
             <div  class="mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__title">
@@ -25,18 +34,16 @@
                         <i class="fa fa-code-fork"></i> {{module.forks}}
                     </span>
                 </div>
-
-
             </div>
         </div>
     </div>
 </div>
 
 <paging
-        page="grid.currentPage"
-        page-size="grid.pageSize"
-        total="grid.total"
+        page="list.currentPage"
+        page-size="list.pageSize"
+        total="list.total"
         show-prev-next="true"
         show-first-last="true"
-        paging-action="grid.DoCtrlPagingAct('Paging Clicked', page, pageSize, total)">
+        paging-action="list.DoCtrlPagingAct('Paging Clicked', page, pageSize, total)">
 </paging>
