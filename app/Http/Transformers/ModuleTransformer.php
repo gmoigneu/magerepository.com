@@ -26,6 +26,7 @@ class ModuleTransformer extends Fractal\TransformerAbstract
             'id'                        => (int) $module->id,
             'name'                      => $module->name,
             'description'               => $module->description,
+            'readme'                    => $module->readme,
             'license'                   => $module->license,
             'stars'                     => $module->stars,
             'forks'                     => $module->forks,
@@ -38,6 +39,8 @@ class ModuleTransformer extends Fractal\TransformerAbstract
             'ssh_url'                   => $module->ssh_url,
             'git_url'                   => $module->git_url,
             'open_issues'               => $module->open_issues,
+            'composer'                  => $module->composer,
+            'require'                   => $module->require,
             'links'   => [
                 [
                     'rel' => 'self',

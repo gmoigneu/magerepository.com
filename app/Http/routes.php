@@ -31,12 +31,15 @@ Route::group(['middleware' => ['web']], function () {
 
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
-    $api->group(['middleware' => 'api'], function ($api) {
+    $api->group(['middleware' => ['api', 'cors']], function ($api) {
         // Endpoints registered here will have the "foo" middleware applied.
         $api->get('modules', ['as' => 'modules.index', 'uses' => 'App\Http\Controllers\Api\V1\ModuleController@index']);
+        $api->post('modules', ['as' => 'modules.add', 'uses' => 'App\Http\Controllers\Api\V1\ModuleController@add']);
         $api->get('modules/{id}', ['as' => 'modules.show', 'uses' => 'App\Http\Controllers\Api\V1\ModuleController@show']);
 
         $api->get('authors', ['as' => 'authors.index', 'uses' => 'App\Http\Controllers\Api\V1\AuthorController@index']);
         $api->get('authors/{id}', ['as' => 'authors.show', 'uses' => 'App\Http\Controllers\Api\V1\AuthorController@show']);
     });
 });
+
+Route::any( '{catchall}', '\App\Http\Controllers\Controller@index')->where('catchall', '(.*)');

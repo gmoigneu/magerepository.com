@@ -1,0 +1,98 @@
+%block {
+  background: $block-background;
+  color: $block-font;
+  @include border-top-radius(2px);
+  @include border-bottom-radius(2px);
+
+  margin-bottom: $p*2;
+
+  .block-header {
+    background: $block-header;
+    color: $block-header-font;
+    @include border-top-radius(1px);
+    padding: $p;
+    h2, p {
+      margin: 0;
+      cursor: pointer;
+    }
+  }
+  .block-content {
+    padding: $p;
+    height: 72px;
+    overflow: hidden;
+    p {
+      margin: 0;
+    }
+  }
+  .block-footer {
+    padding: $p;
+    background: $block-background-darker;
+    @include border-bottom-radius(1px);
+
+    @include outer-container;
+    span {
+      @include span-columns(4);
+      text-align: center;
+    }
+  }
+
+  .fa-star {
+    color: $accent;
+  }
+}
+
+.list-header {
+  @include outer-container;
+  padding: $p*2 0;
+}
+
+.select-order {
+  float: right;
+  border-bottom: 2px solid $block-header;
+}
+
+.list-order {
+  border: 0;
+  -webkit-appearance: none;
+  @include border-top-radius(0);
+  @include border-right-radius(0);
+  @include border-bottom-radius(0);
+  @include border-left-radius(0);
+  padding: $p/2;
+  background-color: transparent;
+}
+
+.modules-grid {
+  @include outer-container;
+  .module {
+    @extend %block;
+    @include span-columns(4);
+    @include omega(3n);
+  }
+}
+
+paging {
+  @include outer-container;
+  text-align: center;
+  ul {
+    list-style-type: none;
+  }
+  li {
+    display: inline-block;
+    a {
+      display: block;
+      color: $block-header-font;
+      padding: $p/2 $p;
+    }
+    background: $block-header;
+    margin: $p/2;
+    &.active {
+      background: $accent-darker;
+    }
+    &.disabled {
+      a {
+        color: $block-font;
+      }
+    }
+  }
+}

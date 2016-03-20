@@ -1,0 +1,57 @@
+<div class="module-details">
+    <div class="header">
+        <div>
+            <div class="header-left">
+                <h1 class="mdl-typography--headline">{{ module.module.name }}</h1>
+                <p>by <a>{{ module.author.username }}</a></p>
+            </div>
+            <div class="header-right">
+                <span>
+                    <i class="fa fa-star"></i> {{module.module.stars}}
+                </span>
+                <span>
+                    <i class="fa fa-eye"></i> {{module.module.watchers}}
+                </span>
+                <span>
+                    <i class="fa fa-code-fork"></i> {{module.module.forks}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <main>
+            <h3>Overview</h3>
+            <div class="readme">
+                <div btf-markdown="module.readme">
+                </div>
+            </div>
+        </main>
+        <aside>
+            <h3>Details</h3>
+            <div class="installation">
+                <div class="block-content">
+                    <h3>Installation</h3>
+                    <p ng-show="module.module.composer"><code>composer require {{ module.module.composer }}</code></p>
+
+                    <a href="{{ module.module.github_url }}"><i class="fa fa-github"></i> View on GitHub</a>
+                    <p></p>
+                </div>
+            </div>
+            <div class="statistics">
+                <div class="block-content">
+                    <h3>Activity</h3>
+                    <p><b>Last update :</b> {{ module.module.repository_pushed_at | timeAgo }}</p>
+                    <p><b>Repository created:</b> {{ module.module.repository_created_at | timeAgo }}</p>
+                </div>
+            </div>
+            <div class="require" ng-show="module.module.require">
+                <div class="block-content">
+                    <h3>Dependencies</h3>
+                    <ul class="dependency">
+                        <li ng-repeat="(dependency, value) in module.module.require"><strong>{{ dependency }}</strong>: {{ value }}</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>

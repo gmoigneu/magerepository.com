@@ -17,16 +17,80 @@ relationships:
     database: "mysql:mysql"
     redis: "redis:redis"
 
+dependencies:
+  nodejs:
+    gulp-cli: "~1.2.1"
+    bower: "~1.7.7"
+
+
 # The configuration of app when it is exposed to the web.
 web:
     # The public directory of the app, relative to its root.
     document_root: "/public"
     # The front-controller script to send non-static requests to.
     passthru: "/index.php"
+    whitelist:
+          # CSS and Javascript.
+          - \.css$
+          - \.js$
+          - \.hbs$
 
+          # image/* types.
+          - \.gif$
+          - \.jpe?g$
+          - \.png$
+          - \.tiff?$
+          - \.wbmp$
+          - \.ico$
+          - \.jng$
+          - \.bmp$
+          - \.svgz?$
+
+          # audio/* types.
+          - \.midi?$
+          - \.mpe?ga$
+          - \.mp2$
+          - \.mp3$
+          - \.m4a$
+          - \.ra$
+          - \.weba$
+
+          # video/* types.
+          - \.3gpp?$
+          - \.mp4$
+          - \.mpe?g$
+          - \.mpe$
+          - \.ogv$
+          - \.mov$
+          - \.webm$
+          - \.flv$
+          - \.mng$
+          - \.asx$
+          - \.asf$
+          - \.wmv$
+          - \.avi$
+
+          # application/ogg.
+          - \.ogx$
+
+          # application/x-shockwave-flash.
+          - \.swf$
+
+          # application/java-archive.
+          - \.jar$
+
+          # fonts types.
+          - \.ttf$
+          - \.eot$
+          - \.woff$
+          - \.woff2$
+          - \.otf$
+
+          # robots.txt.
+          - /robots\.txt$
 
 # The size of the persistent disk of the application (in MB).
-disk: 2048
+disk: 256
 
 # The mounts that will be performed when the package is deployed.
 mounts:
@@ -35,7 +99,11 @@ mounts:
 hooks:
     deploy: |
         php artisan migrate --force
-
+    build: |
+        cd webapp
+        npm install
+        bower install
+        gulp
 # The configuration of scheduled execution.
 # see http://symfony.com/doc/current/components/console/introduction.html
 #crons:

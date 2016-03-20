@@ -18,6 +18,8 @@ class CreateModulesTable extends Migration
             $table->string('name');
             $table->text('description')->nullable(true);
             $table->text('readme')->nullable(true);
+            $table->string('composer')->nullable(true);
+            $table->text('require')->nullable(true);
             $table->string('license')->nullable(true);
             $table->integer('stars');
             $table->integer('forks');

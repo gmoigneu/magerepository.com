@@ -1,0 +1,46 @@
+<div class="list-header">
+    Listing all {{ list.total }} modules
+
+    <div class="select-order">
+        <i class="fa fa-arrows-v"></i>
+        <select class="list-order" name="singleSelect" ng-model="list.order" ng-change="list.DoOrderUpdate()">
+            <option value="popular">Popular modules</option>
+            <option value="new">New additions</option>
+            <option value="updated">Recently updated</option>
+        </select>
+    </div>
+</div>
+
+
+<div class="modules-grid">
+    <div class="module" ng-repeat="module in list.modules">
+        <div class="block-header">
+            <h2><span ui-sref="module({moduleId: module.id})">{{module.name}}</span></h2>
+            <p>by <a>{{module.author.data.username}}</a></p>
+        </div>
+        <div class="block-content">
+            <p ng-if="module.description">{{module.description}}</p>
+            <p ng-if="!module.description">No description yet :/</p>
+        </div>
+        <div class="block-footer">
+            <span>
+                <i class="fa fa-star"></i> {{module.stars}}
+            </span>
+            <span>
+                <i class="fa fa-eye"></i> {{module.watchers}}
+            </span>
+            <span>
+                <i class="fa fa-code-fork"></i> {{module.forks}}
+            </span>
+        </div>
+    </div>
+</div>
+
+<paging
+        page="list.currentPage"
+        page-size="list.pageSize"
+        total="list.total"
+        show-prev-next="true"
+        show-first-last="true"
+        paging-action="list.DoCtrlPagingAct('Paging Clicked', page, pageSize, total)">
+</paging>
