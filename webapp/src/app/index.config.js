@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig, RestangularProvider, envServiceProvider) {
+  function config($logProvider, toastrConfig, RestangularProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -37,6 +37,18 @@
       }
       return extractedData;
     });
+
+    angular.extend(toastrConfig, {
+      autoDismiss: false,
+      containerId: 'toast-container',
+      maxOpened: 0,
+      newestOnTop: true,
+      positionClass: 'toast-top-right',
+      preventDuplicates: false,
+      preventOpenDuplicates: false,
+      target: 'body'
+    });
+
   }
 
 })();

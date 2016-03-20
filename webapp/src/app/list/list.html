@@ -1,11 +1,14 @@
 <div class="list-header">
     Listing all {{ list.total }} modules
 
-    <select name="singleSelect" ng-model="list.order" ng-change="list.DoOrderUpdate()">
-        <option value="popular">Popular</option>
-        <option value="new">New additions</option>
-        <option value="updated">Recently updated</option>
-    </select>
+    <div class="select-order">
+        <i class="fa fa-arrows-v"></i>
+        <select class="list-order" name="singleSelect" ng-model="list.order" ng-change="list.DoOrderUpdate()">
+            <option value="popular">Popular modules</option>
+            <option value="new">New additions</option>
+            <option value="updated">Recently updated</option>
+        </select>
+    </div>
 </div>
 
 

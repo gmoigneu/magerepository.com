@@ -12,6 +12,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Dingo\Api\Routing\Helpers;
+use Illuminate\Support\Facades\Log;
 use League\Uri\Schemes\Http as HttpUri;
 use RuntimeException;
 use Symfony\Component\VarDumper\VarDumper;

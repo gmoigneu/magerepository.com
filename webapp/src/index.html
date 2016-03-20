@@ -17,7 +17,7 @@
     <!-- endinject -->
     <!-- endbuild -->
   </head>
-  <body>
+  <body ng-controller="MainController as main">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -33,12 +33,18 @@
             <p class="baseline">Curated repository of open-source Magento2 modules</p>
           </div>
           <div class="header-right">
-            <a href="#"><i class="fa fa-plus"></i> Add module</a>
+            <a href="#" ng-click="main.showForm()"><i class="fa fa-plus"></i> Add module</a>
           </div>
         </div>
       </header>
 
       <main>
+        <div class="add-module" ng-if="main.addForm" class="fade">
+          <form ng-submit="main.submitForm()">
+            <input type="text" id="github-url" ng-model="main.github_url" name="github-url" placeholder="Please specify the Github full URI"/>
+            <input type="submit" value="Add!" />
+          </form>
+        </div>
         <section ui-view>
 
         </section>

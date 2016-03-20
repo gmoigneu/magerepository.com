@@ -45,6 +45,23 @@
   @include outer-container;
   padding: $p*2 0;
 }
+
+.select-order {
+  float: right;
+  border-bottom: 2px solid $block-header;
+}
+
+.list-order {
+  border: 0;
+  -webkit-appearance: none;
+  @include border-top-radius(0);
+  @include border-right-radius(0);
+  @include border-bottom-radius(0);
+  @include border-left-radius(0);
+  padding: $p/2;
+  background-color: transparent;
+}
+
 .modules-grid {
   @include outer-container;
   .module {

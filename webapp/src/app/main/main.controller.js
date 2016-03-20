@@ -6,34 +6,24 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($timeout, webDevTec, toastr) {
+  function MainController(Restangular, toastr) {
     var vm = this;
 
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1456684738253;
-    vm.showToastr = showToastr;
+    vm.addForm = false;
 
-    activate();
+    vm.showForm = (function() {
+      vm.addForm = !vm.addForm;
+    });
 
-    function activate() {
-      getWebDevTec();
-      $timeout(function() {
-        vm.classAnimation = 'rubberBand';
-      }, 4000);
-    }
-
-    function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-      vm.classAnimation = '';
-    }
-
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
-
-      angular.forEach(vm.awesomeThings, function(awesomeThing) {
-        awesomeThing.rank = Math.random();
+    vm.submitForm = (function() {
+      Restangular.all('modules').post({uri: vm.github_url}, ''
+      ).then(function(response) {
+        toastr.success('Thank you. We\'ll review this very soon.', 'Module added!');
+        vm.addForm = false;
+        vm.github_url = null;
+      }, function(response) {
+        toastr.error('Please provide a valid GitHub URI', 'Malformed URI');
       });
-    }
+    });
   }
 })();

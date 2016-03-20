@@ -199,6 +199,33 @@ header {
   }
 }
 
+div.add-module {
+  background: $block-background;
+}
+
+form {
+  @include outer-container();
+  text-align: center;
+  padding: $p*2;
+  input {
+    padding: $p;
+    border: 0;
+  }
+  input[type="text"] {
+    min-width: 300px;
+    color: $block-font;
+  }
+  input[type="submit"] {
+    color: white;
+    background-color: $accent-darker;
+    padding: $p $p*2;
+    &:hover {
+      background-color: white;
+      color: $accent-darker;
+    }
+  }
+}
+
 main {
   margin-bottom: $p*2;
 }
