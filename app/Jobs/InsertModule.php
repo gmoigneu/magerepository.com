@@ -75,6 +75,7 @@ class InsertModule extends Job implements ShouldQueue
             }
 
             $module->name = $repo['name'];
+            $module->description = $repo['description'];
             $module->repository_pushed_at = $repo['created_at'];
             $module->repository_created_at = $repo['pushed_at'];
             $module->stars = $repo['stargazers_count'];

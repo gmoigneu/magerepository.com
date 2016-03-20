@@ -28,10 +28,13 @@
         </main>
         <aside>
             <h3>Details</h3>
-            <div class="installation" ng-show="module.module.composer">
+            <div class="installation">
                 <div class="block-content">
                     <h3>Installation</h3>
-                    <p><code>composer require {{ module.module.composer }}</code></p>
+                    <p ng-show="module.module.composer"><code>composer require {{ module.module.composer }}</code></p>
+
+                    <a href="{{ module.module.github_url }}"><i class="fa fa-github"></i> View on GitHub</a>
+                    <p></p>
                 </div>
             </div>
             <div class="statistics">

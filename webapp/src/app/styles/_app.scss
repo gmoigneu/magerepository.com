@@ -157,8 +157,26 @@ p.author {
 }
 
 header {
-  div {
+  & > div {
     @include outer-container;
+    .header-left {
+      @include span-columns(10);
+    }
+    .header-right {
+      @include span-columns(2);
+      text-align: right;
+      a {
+        color: white;
+        background-color: $accent-darker;
+        padding: $p $p*2;
+        position: relative;
+        top: 16px;
+        &:hover {
+          background-color: white;
+          color: $accent-darker;
+        }
+      }
+    }
     padding: $p 0;
     img {
       float: left;

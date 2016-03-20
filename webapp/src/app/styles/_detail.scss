@@ -43,6 +43,19 @@
           border-bottom: 1px solid $block-header-font;
         }
       }
+
+      a {
+        color: white;
+        background-color: $accent-darker;
+        padding: $p $p*2;
+        margin: $p 0;
+        &:hover {
+          background-color: white;
+          color: $accent-darker;
+        }
+        display: block;
+        text-align: center;
+      }
     }
     main {
       @include span-columns(8);

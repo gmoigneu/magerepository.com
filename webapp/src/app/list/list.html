@@ -16,7 +16,8 @@
             <p>by <a ui-sref="author({authorId: module.author.data.id})">{{module.author.data.username}}</a></p>
         </div>
         <div class="block-content">
-            <p>Lorem ipsum dolor sie amet. Lorem ipsum dolor sie amet. Lorem ipsum dolor sie amet.  {{module.description}}</p>
+            <p ng-if="module.description">{{module.description}}</p>
+            <p ng-if="!module.description">No description yet :/</p>
         </div>
         <div class="block-footer">
             <span>
