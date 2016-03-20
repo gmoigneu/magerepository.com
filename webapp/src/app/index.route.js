@@ -6,7 +6,7 @@
     .config(routerConfig);
 
   /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
+  function routerConfig($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $stateProvider
       .state('list-mp', {
@@ -34,6 +34,10 @@
         controllerAs: 'author'
       });
     $urlRouterProvider.otherwise('/');
+
+    // enable html5Mode for pushstate ('#'-less URLs)
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('!');
   }
   
 })();

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Module extends Model
 {
+    protected $fillable = ['github_id'];
+    
     /**
      * Get the author that owns the module.
      */

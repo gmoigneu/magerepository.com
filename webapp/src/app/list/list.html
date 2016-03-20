@@ -16,7 +16,7 @@
     <div class="module" ng-repeat="module in list.modules">
         <div class="block-header">
             <h2><span ui-sref="module({moduleId: module.id})">{{module.name}}</span></h2>
-            <p>by <a ui-sref="author({authorId: module.author.data.id})">{{module.author.data.username}}</a></p>
+            <p>by <a>{{module.author.data.username}}</a></p>
         </div>
         <div class="block-content">
             <p ng-if="module.description">{{module.description}}</p>

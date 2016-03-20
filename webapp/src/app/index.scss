@@ -6,9 +6,9 @@
 // endbower
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
-$fa-font-path: "../../bower_components/font-awesome/fonts";
-@import "../../bower_components/font-awesome/scss/font-awesome.scss";
-@import "../../bower_components/angular-toastr/dist/angular-toastr.min.css";
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url(https://npmcdn.com/angular-toastr/dist/angular-toastr.css);
 @import "styles/normalize";
 @import "styles/bourbon/bourbon";
 @import "styles/neat/neat";

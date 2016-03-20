@@ -46,7 +46,7 @@ class InsertModule extends Job implements ShouldQueue
             $username = $path[0];
             $name = $path[1];
         }
-
+        
         $author = Author::firstOrNew(['username' => $username]);
         $author->save();
 

@@ -41,3 +41,5 @@ $api->version('v1', function ($api) {
         $api->get('authors/{id}', ['as' => 'authors.show', 'uses' => 'App\Http\Controllers\Api\V1\AuthorController@show']);
     });
 });
+
+Route::any( '{catchall}', '\App\Http\Controllers\Controller@index')->where('catchall', '(.*)');
