@@ -22,21 +22,24 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header>
-      <div>
-        <img src="/assets/magerepository.svg" alt="">
-        <p class="title">
-          <span>MageRepository</span>
-        </p>
-        <p class="baseline">Curated repository of open-source Magento2 modules</p>
-      </div>
-    </header>
+    <div class="wrapper">
+      <header  ui-sref="list-m">
+        <div>
+          <img src="/assets/magerepository.svg" alt="">
+          <p class="title">
+            <span>MageRepository</span>
+          </p>
+          <p class="baseline">Curated repository of open-source Magento2 modules</p>
+        </div>
+      </header>
 
-    <main>
-      <section ui-view>
+      <main>
+        <section ui-view>
 
-      </section>
-    </main>
+        </section>
+      </main>
+      <div class="push"></div>
+    </div>
 
     <footer>
       <div>

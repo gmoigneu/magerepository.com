@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             'https://github.com/ashsmith/magento2-controller-module',
             'https://github.com/ashsmith/magento2-blog-module-tutorial',
             'https://github.com/UltimateModuleCreator/Umc_Base',
+            'https://github.com/Magestore/Bannerslider-Magento2',
         ];
 
         foreach($modules as $module) {

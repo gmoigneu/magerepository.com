@@ -13,7 +13,11 @@
           'restangular',
           'ui.router',
           'toastr',
-          'bw.paging'
+          'bw.paging',
+          'ngSanitize',
+          'btford.markdown',
+          'yaru22.angular-timeago',
+          'environment'
         ]
 
     );

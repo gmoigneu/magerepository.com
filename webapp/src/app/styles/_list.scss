@@ -3,6 +3,9 @@
   color: $block-font;
   @include border-top-radius(2px);
   @include border-bottom-radius(2px);
+
+  margin-bottom: $p*2;
+
   .block-header {
     background: $block-header;
     color: $block-header-font;
@@ -40,7 +43,7 @@
 
 .list-header {
   @include outer-container;
-  padding-bottom: $p*2;
+  padding: $p*2 0;
 }
 .modules-grid {
   @include outer-container;

@@ -27,6 +27,8 @@ html, body {
   @include clearfix;
   font-family: $sans-serif;
   text-align: left;
+
+  height: 100%;
 }
 
 h1, h2, h3, p {
@@ -177,14 +179,25 @@ header {
     color: $block-header-font;
     margin: 0;
   }
-  margin-bottom: $p*2;
 }
 
 main {
+  margin-bottom: $p*2;
+}
 
+.wrapper {
+  min-height: 100%;
+  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -72px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.push {
+  height: 72px;
 }
 
 footer {
+  height: 72px;
   div {
     @include outer-container;
   }
@@ -193,7 +206,5 @@ footer {
   }
   padding: 2*$p;
   background: $block-header;
-  position: absolute;
-  bottom: 0;
   width: 100%;
 }

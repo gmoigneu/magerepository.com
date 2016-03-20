@@ -62,6 +62,18 @@ class InsertModule extends Job implements ShouldQueue
 
             $module = Module::firstOrNew(['github_id' => $repo['id']]);
 
+            $readme = $client->api('repo')->contents()->readme($username, $name);
+
+            if(array_key_exists('content', $readme)) {
+                $module->readme = $readme['content'];
+            }
+
+            if($client->api('repo')->contents()->exists($username, $name, 'composer.json')) {
+                $composer = json_decode(base64_decode($client->api('repo')->contents()->show($username, $name, '/composer.json')['content']));
+                $module->require = $composer->require;
+                $module->composer = $composer->name;
+            }
+
             $module->name = $repo['name'];
             $module->repository_pushed_at = $repo['created_at'];
             $module->repository_created_at = $repo['pushed_at'];

@@ -13,4 +13,12 @@ class Module extends Model
     {
         return $this->belongsTo('App\Entities\Author');
     }
+
+    public function setRequireAttribute($value) {
+        $this->attributes['require'] = serialize($value);
+    }
+
+    public function getRequireAttribute($value) {
+        return unserialize($value);
+    }
 }

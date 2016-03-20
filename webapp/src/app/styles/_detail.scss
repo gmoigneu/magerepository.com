@@ -1,0 +1,65 @@
+.module-details {
+
+
+  .header {
+    & > div {
+      @include outer-container;
+      .header-left {
+        @include span-columns(8);
+      }
+      .header-right {
+        @include span-columns(4);
+        font-size: 1.4em;
+        text-align: right;
+        span {
+          margin-left: 2*$p;
+          line-height: 3.6em;
+        }
+        .fa-star {
+          color: gold;
+        }
+      }
+    }
+    background: $block-header;
+    padding: $p;
+    h1, p {
+      margin: 0;
+    }
+    margin-bottom: 2*$p;
+  }
+
+  .content {
+    @include outer-container;
+    aside {
+      @include span-columns(4);
+      div {
+        @extend %block;
+        .block-content {
+          height: auto;
+        }
+        margin-bottom: 2*$p;
+        h3 {
+          padding-bottom: $p;
+          border-bottom: 1px solid $block-header-font;
+        }
+      }
+    }
+    main {
+      @include span-columns(8);
+      .readme {
+        background-color: $block-background;
+        padding: $p;
+        color: $block-font;
+        h1, h2, h3, h4 {
+          margin-bottom: 0;
+        }
+        p {
+          margin-bottom: $p;
+        }
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

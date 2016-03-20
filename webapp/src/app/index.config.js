@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig, RestangularProvider) {
+  function config($logProvider, toastrConfig, RestangularProvider, envServiceProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -17,7 +17,14 @@
     toastrConfig.preventDuplicates = true;
     toastrConfig.progressBar = true;
 
-    RestangularProvider.setBaseUrl('http://magerepository.app/api/');
+    var newBaseUrl = "";
+    if (window.location.hostname == "localhost") {
+      newBaseUrl = "http://magerepository.app/api/";
+    } else {
+      newBaseUrl = "/api/";
+    }
+
+    RestangularProvider.setBaseUrl(newBaseUrl);
     RestangularProvider.addResponseInterceptor(function(data, operation) {
       var extractedData;
       // .. to look for getList operations
